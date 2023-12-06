@@ -23,8 +23,11 @@ namespace osu_tops
     {
         public MainWindow()
         {
-            Debug.WriteLine(osu_tops.Evaluators.ModConverter.modToString(5707));
             InitializeComponent();
+            int mod = 5707;
+            string modString = osu_tops.Evaluators.ModConverter.modToString(mod);
+            Debug.WriteLine(modString);
+            Debug.WriteLine(osu_tops.Evaluators.ModConverter.simplifyMods(modString));
         }
     }
 }

@@ -59,8 +59,15 @@ namespace osu_tops.Evaluators
 
 		// Remove mods that recommendation algorithm won't consider
 		// Includes: PF, SO, SD, NF
-		private static string filterMods(string modString) {
-			return "";
+		public static string simplifyMods(string modString) {
+			string newModString = modString
+				.Replace("NF", "")
+				.Replace("SO", "")
+				.Replace("SD", "")
+				.Replace("PF", "")
+				.Replace("NC", "DT");
+
+            return newModString;
 		}
 
 		// Standardise written order of mods
